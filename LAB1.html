@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>JORGE</title>
+</head>
+<body>
+    
+    <div class="placar">
+        <table>
+            <tr>
+                <td>
+                    <div id="info-jogador">
+                        <span id="nome-jogador">JORGE:</span>
+                        <span id="pontuacao-jogador">0</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="temporizador"></div>
+    <div id="pontuacao-jogador"></div>
+    <div class="controles">
+        <button id="iniciar" onclick="iniciarTemporizador()">Iniciar</button>
+        <button id="pausar" onclick="pausarTemporizador()">Pausar</button>
+        <button id="reiniciar" onclick="reiniciarTemporizador()">Reiniciar</button>
+    </div>
+    
+     <table class="tabuleiro">
+             <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+             </tr>
+             <tr>
+                <td></td>
+                <td> <div class="personagem" id="personagem">
+                    <div class="cabeca">
+                    <div class="olho E"></div>
+                    <div class="olho D"></div>
+                    <div class="bOCA"></div>
+                </div>
+            </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    <script src="things.js"></script>
+</body>
+</html>
