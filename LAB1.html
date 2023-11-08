@@ -19,6 +19,7 @@
             <input type="submit" value="Aplicar Personalização">
         </form>
     </div>
+   
     
     <div class="placar">
         <table>
@@ -39,7 +40,6 @@
         <button id="pausar" onclick="pausarTemporizador()">Pausar</button>
         <button id="reiniciar" onclick="reiniciarTemporizador()">Reiniciar</button>
     </div>
-    
     <table class="tabuleiro">
         <tr>
             <td id="celula-1-1"></td>
@@ -65,7 +65,14 @@
             <td id="celula-3-3"></td>
         </tr>
     </table>
-    
+    <div id="inventario" class="inventario">
+        <div class="item" draggable="true"></div>
+        <div class="item" draggable="true"></div>
+        <div class="item" draggable="true"></div>
+    </div>
+     <button class="botao" onclick="verificarEspacoNoInventario()">15 segundos = 400 moedas</button>
+
+    <div id="inventarioDestino" class="inventario"></div>
     <script src="things.js"></script>
 </body>
 </html>

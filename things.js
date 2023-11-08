@@ -158,4 +158,26 @@ function verificarColisao() {
 spawnQuadrados();
 setInterval(verificarColisao, 250);
 
+function verificarEspacoNoInventario() {
+    var inventarioDestino = document.getElementById('inventarioDestino');
+
+    // Verifica se há menos de 3 itens no inventário inicial
+    if (inventarioDestino.children.length < 3) {
+        adicionarCirculoDourado(inventarioDestino);
+    }
+}
+
+function adicionarCirculoDourado(inventarioDestino) {
+    var novoItem = document.createElement('div');
+    novoItem.className = 'circulo-dourado';
+    inventarioDestino.appendChild(novoItem);
+}
+
+
+function verificarPontos() {
+    // Verifica se o jogador tem pelo menos 400 pontos
+    if (pontos >= 400) {
+        adicionarCirculoDourado();
+    }
+}
 

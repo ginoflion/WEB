@@ -142,7 +142,7 @@ button:active {
 
 .personalizacao {
   position: fixed;
-  bottom: 25%;
+  bottom: 30%;
   left: 20px;
   width: 250px;
   padding: 20px;
@@ -176,4 +176,48 @@ button:active {
 
 .personalizacao input[type="submit"]:hover {
   background-color: #45a049;
+}
+
+.inventario {
+  display: flex;
+  position: fixed;
+  bottom: 45%;
+  right: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000000;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #000000;
+}
+
+.botao {
+  background-color: #ae6716;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 60%;
+  right: 20px;
+}
+
+.circulo-dourado {
+  width: 90px;
+  height: 90px;
+  margin-right: 5px;
+  margin-bottom :5px;
+  border-radius: 50%;
+  background-color: gold;
+ 
 }
