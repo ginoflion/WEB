@@ -142,7 +142,7 @@ button:active {
 
 .personalizacao {
   position: fixed;
-  bottom: 25%;
+  bottom: 30%;
   left: 20px;
   width: 250px;
   padding: 20px;
@@ -176,4 +176,51 @@ button:active {
 
 .personalizacao input[type="submit"]:hover {
   background-color: #45a049;
+}
+
+.inventario {
+  display: flex;
+  position: fixed;
+  bottom: 45%;
+  right: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.slot {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000000;
+  margin: 5px;
+  background-color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px; /* Tamanho da fonte para o número dentro do slot */
+}
+
+.slot span {
+  pointer-events: none; /* Impede que o número dentro do slot receba eventos de mouse */
+}
+
+.botao {
+  background-color: #ae6716;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 10%; 
+  right: 20px;
+}
+
+.moeda {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffd700;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
