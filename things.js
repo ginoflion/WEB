@@ -158,6 +158,7 @@ function verificarColisao() {
 spawnQuadrados();
 setInterval(verificarColisao, 250);
 
+<<<<<<< HEAD
 function verificarEspacoNoInventario() {
     var inventarioDestino = document.getElementById('inventarioDestino');
 
@@ -180,4 +181,49 @@ function verificarPontos() {
         adicionarCirculoDourado();
     }
 }
+=======
+var moedaAdicionada = false; // Variável para rastrear se a moeda foi adicionada
+var slots = document.querySelectorAll('.slot'); // Obtém todos os elementos com a classe 'slot'
+>>>>>>> 4f62d82bd7ee22058720ef6e7f72103a86377436
 
+  
+  
+function adicionarMoeda() {
+    if (pontuacao > 100 && !moedaAdicionada) {
+      // Encontrar o próximo slot disponível
+      var proximoSlot = Array.from(slots).find(slot => !slot.classList.contains('ocupado'));
+  
+      if (proximoSlot) {
+        // Criar um novo elemento moeda
+        var moeda = document.createElement('div');
+        moeda.classList.add('moeda');
+  
+        // Calcular as coordenadas para posicionar a moeda no centro do slot
+        var slotRect = proximoSlot.getBoundingClientRect();
+        var moedaSize = 50; // Tamanho da moeda (largura e altura)
+        var left = slotRect.left + (slotRect.width - moedaSize) / 2;
+        var top = slotRect.top + (slotRect.height - moedaSize) / 2;
+  
+        // Configurar as coordenadas de posição da moeda
+        moeda.style.position = 'absolute';
+        moeda.style.left = left + 'px';
+        moeda.style.top = top + 'px';
+  
+        // Adicionar a moeda ao corpo do documento
+        document.body.appendChild(moeda);
+  
+        proximoSlot.classList.add('ocupado'); // Marcar o slot como ocupado
+        moedaAdicionada = true; // Atualizar a variável para indicar que a moeda foi adicionada
+  
+        // Resetar a variável moedaAdicionada para permitir adicionar mais moedas
+        setTimeout(function() {
+          moedaAdicionada = false;
+        }, 1000); // Aguardar 1 segundo (1000 milissegundos) para resetar a variável moedaAdicionada
+  
+        // Subtrair 100 pontos da pontuação
+        pontuacao -= 100;
+        console.log('Pontuação atual: ' + pontuacao); // Mostrar a pontuação atual no console (opcional)
+      }
+    }
+  }
+  
