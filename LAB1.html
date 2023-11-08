@@ -7,6 +7,18 @@
   <title>JORGE</title>
 </head>
 <body>
+    <div class="personalizacao">
+        <h2>Personalização </h2>
+        <form id="personalizacaoForm">
+            <label for="cor">Cor dos Olhos:</label>
+            <input type="color" id="cor" name="cor"><br><br>
+
+            <label for="nome">Nome do Personagem:</label>
+            <input type="text" id="nome" name="nome"><br><br>
+
+            <input type="submit" value="Aplicar Personalização">
+        </form>
+    </div>
     
     <div class="placar">
         <table>
@@ -28,29 +40,32 @@
         <button id="reiniciar" onclick="reiniciarTemporizador()">Reiniciar</button>
     </div>
     
-     <table class="tabuleiro">
-             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-             </tr>
-             <tr>
-                <td></td>
-                <td> <div class="personagem" id="personagem">
+    <table class="tabuleiro">
+        <tr>
+            <td id="celula-1-1"></td>
+            <td id="celula-1-2"></td>
+            <td id="celula-1-3"></td>
+        </tr>
+        <tr>
+            <td id="celula-2-1"></td>
+            <td id="celula-2-2">
+                <div class="personagem" id="personagem">
                     <div class="cabeca">
-                    <div class="olho E"></div>
-                    <div class="olho D"></div>
-                    <div class="bOCA"></div>
+                        <div class="olho E"></div>
+                        <div class="olho D"></div>
+                        <div class="bOCA"></div>
+                    </div>
                 </div>
             </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+            <td id="celula-2-3"></td>
+        </tr>
+        <tr>
+            <td id="celula-3-1"></td>
+            <td id="celula-3-2"></td>
+            <td id="celula-3-3"></td>
+        </tr>
+    </table>
+    
     <script src="things.js"></script>
 </body>
 </html>
