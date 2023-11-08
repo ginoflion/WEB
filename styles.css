@@ -189,22 +189,11 @@ button:active {
   margin-top: 20px;
 }
 
-<<<<<<< HEAD
-.item {
-=======
 .slot {
->>>>>>> 4f62d82bd7ee22058720ef6e7f72103a86377436
   width: 100px;
   height: 100px;
   border: 1px solid #000000;
   margin: 5px;
-<<<<<<< HEAD
-  cursor: pointer;
-}
-
-.item:hover {
-  background-color: #000000;
-=======
   background-color: #ffffff;
   cursor: pointer;
   display: flex;
@@ -215,7 +204,6 @@ button:active {
 
 .slot span {
   pointer-events: none; /* Impede que o número dentro do slot receba eventos de mouse */
->>>>>>> 4f62d82bd7ee22058720ef6e7f72103a86377436
 }
 
 .botao {
@@ -225,20 +213,6 @@ button:active {
   padding: 10px 20px;
   cursor: pointer;
   position: fixed;
-<<<<<<< HEAD
-  bottom: 60%;
-  right: 20px;
-}
-
-.circulo-dourado {
-  width: 90px;
-  height: 90px;
-  margin-right: 5px;
-  margin-bottom :5px;
-  border-radius: 50%;
-  background-color: gold;
- 
-=======
   bottom: 10%; 
   right: 20px;
 }
@@ -249,5 +223,4 @@ button:active {
   border-radius: 50%;
   background-color: #ffd700;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
->>>>>>> 4f62d82bd7ee22058720ef6e7f72103a86377436
 }

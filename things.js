@@ -158,33 +158,8 @@ function verificarColisao() {
 spawnQuadrados();
 setInterval(verificarColisao, 250);
 
-<<<<<<< HEAD
-function verificarEspacoNoInventario() {
-    var inventarioDestino = document.getElementById('inventarioDestino');
-
-    // Verifica se há menos de 3 itens no inventário inicial
-    if (inventarioDestino.children.length < 3) {
-        adicionarCirculoDourado(inventarioDestino);
-    }
-}
-
-function adicionarCirculoDourado(inventarioDestino) {
-    var novoItem = document.createElement('div');
-    novoItem.className = 'circulo-dourado';
-    inventarioDestino.appendChild(novoItem);
-}
-
-
-function verificarPontos() {
-    // Verifica se o jogador tem pelo menos 400 pontos
-    if (pontos >= 400) {
-        adicionarCirculoDourado();
-    }
-}
-=======
 var moedaAdicionada = false; // Variável para rastrear se a moeda foi adicionada
 var slots = document.querySelectorAll('.slot'); // Obtém todos os elementos com a classe 'slot'
->>>>>>> 4f62d82bd7ee22058720ef6e7f72103a86377436
 
   
   
@@ -226,4 +201,3 @@ function adicionarMoeda() {
       }
     }
   }
-  
