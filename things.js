@@ -1,9 +1,9 @@
+//#region Temporizador
 var temporizador;
 var tempoInicial = 30;
 var tempoAtual = tempoInicial;
 var emPausa = true; 
 
-//#region Temporizador
 function atualizarTemporizador() {
     var minutos = Math.floor(tempoAtual / 60);
     var segundos = tempoAtual % 60;
@@ -11,13 +11,12 @@ function atualizarTemporizador() {
     document.getElementById('temporizador').innerHTML = minutos + ':' + segundos;
     if (tempoAtual === 0) {
         clearInterval(temporizador);
-        alert('Tempo esgotado!');
         emPausa=true;
     } else if (!emPausa) {
         tempoAtual--;
     }
 }
-//#endregion Temporizador
+//#endregion
 
 //#region Botões
 function iniciarTemporizador() {
@@ -41,14 +40,12 @@ function reiniciarTemporizador() {
 }
 //#endregion
 
-
+//#region Movimentacao
 
 const personagem = document.getElementById('personagem');
 const larguraCelula = 130;
 const alturaCelula = 130;
-const numeroColunas = 3;
 
-//#region Movimentacao
 function moverPersonagem(e) {
     if (!emPausa) { 
         const celulaAtual = document.querySelector('.personagem').parentElement;
@@ -82,12 +79,14 @@ function moverPersonagem(e) {
 window.addEventListener('keydown', moverPersonagem, 300);
 
 //#endregion
+
+//#region Personalizaçao
 const personalizacaoForm = document.getElementById('personalizacaoForm');
 const olhoEsquerdo = document.querySelector('.olho.E');
 const olhoDireito = document.querySelector('.olho.D');
 const nomeJogador = document.getElementById('nome-jogador');
 
-//#region Personalizaçao
+
 personalizacaoForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
 
@@ -103,11 +102,11 @@ personalizacaoForm.addEventListener('submit', function(event) {
 });
 //#endregion
 
+//#region SpawnAleatório
+
 const celulas = document.querySelectorAll('.tabuleiro td');
 let quadrados = [];
 
-
-//#region SpawnAleatório
 function spawnQuadrados() {
     quadrados.forEach(quadrado => {
         quadrado.parentNode.removeChild(quadrado);
@@ -135,24 +134,23 @@ function spawnQuadrados() {
 }
 //#endregion
 
+//#region Pontuação
 let pontuacao = 0; 
 
-//#region Pontuação
 function atualizarPontuacao(pontos) {
-    pontuacao += pontos; // Aumenta a pontuação pelos pontos fornecidos
-    document.getElementById('pontuacao-jogador').textContent = pontuacao; // Atualiza a exibição da pontuação no HTML
+    pontuacao += pontos; 
+    document.getElementById('pontuacao-jogador').textContent = pontuacao; 
 }
 //#endregion
 
 //#region Colisões
 function verificarColisao() {
     const celulaPersonagem = personagem.parentElement;
-    let colidiu = false;
+    
 
     quadrados.forEach(quadrado => {
         const celulaQuadrado = quadrado.parentElement;
         if (celulaPersonagem === celulaQuadrado) {
-            colidiu = true;
             let pontosGanhos = 10; 
             atualizarPontuacao(pontosGanhos); 
             spawnQuadrados();
@@ -165,13 +163,12 @@ spawnQuadrados();
 setInterval(verificarColisao, 250);
 //#endregion
 
-  
  //#region inventário  
  let inventario = [null, null];
 
  function adicionarMoedaAoInventario() {
     if (pontuacao >= 100) {
-        // Verifica se a pontuação é maior ou igual a 100
+
         let novaMoeda = document.createElement("div");
         novaMoeda.className = "moeda";
 
@@ -182,17 +179,13 @@ setInterval(verificarColisao, 250);
             let slotElement = document.getElementById("slot-" + (slotVazio + 1));
             slotElement.appendChild(novaMoeda);
             
-            // Reduz a pontuação em 100 ao comprar uma moeda
             pontuacao -= 100;
-            document.getElementById('pontuacao-jogador').textContent = pontuacao; // Atualiza a exibição da pontuação no HTML
+            document.getElementById('pontuacao-jogador').textContent = pontuacao; 
         }
     } else {
-        console.log("Você não tem pontos suficientes para adicionar uma moeda.");
+
     }
 }
-
-
-
 
   function limparInventario() {
     inventario = [null, null];
@@ -204,18 +197,17 @@ setInterval(verificarColisao, 250);
 
   //#endregion
 
-  let estado = 'Iniciar';
+   //#region Estados
+  let estado = 'Iniciarmeep';
   document.getElementById('estado').textContent = estado;
-  
-  //#region Estados
+ 
   function AtualizarEstado() {
-    
-  
-    if (emPausa === true) {
+
+    if (tempoAtual === 0 && emPausa ===true) {
+        estado = 'Fim';
+    }  else if (emPausa === true) {
       estado = 'Pausa';
-    } else if (tempoAtual === 0) {
-      estado = 'Fim';
-    } else if (emPausa === false && tempoAtual !== 0) {
+    }  else if (emPausa === false && tempoAtual !== 0) {
       estado = 'Joga';
     }
     document.getElementById('estado').textContent = estado;

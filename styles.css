@@ -7,37 +7,8 @@ body {
   background-image: url('wallpaper.jpg');
 }
 
-
 .personagem {
   position: relative;
-}
-
-#temporizador, #info-jogador {
-  font-size: 18px;
-  color: white;
-  padding: 10px;
-  border: 1px solid #ae6716;
-  border-radius: 5px;
-}
-
-#temporizador {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  background-color: #ae6716;
-}
-
-#info-jogador {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background-color: #ae6716;
-  display: flex;
-  flex-direction: row;
-}
-
-#nome-jogador, #pontuacao-jogador {
-  margin-right: 10px; 
 }
 
 .cabeca {
@@ -68,6 +39,18 @@ body {
   right: 20%;
 }
 
+
+.bOCA {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background-color: rgb(40, 69, 184);
+  border-radius: 70%;
+  left: 50%;
+  bottom: 20%;
+  transform: translateX(-50%);
+}
+
 @keyframes animacaoOlhos {
   0% {
     border-radius: 0%;
@@ -84,19 +67,6 @@ body {
   animation: animacaoOlhos 4s infinite; 
 }
 
-.bOCA {
-  position: absolute;
-  width: 10px;
-  height: 20px;
-  background-color: rgb(40, 69, 184);
-  border-radius: 70%;
-  left: 50%;
-  bottom: 20%;
-  transform: translateX(-50%);
-}
-
-
-
 .tabuleiro {
   margin-top: 20px;
     border-collapse: collapse;
@@ -110,6 +80,34 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
+#temporizador, #info-jogador {
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+  border: 1px solid #ae6716;
+  border-radius: 5px;
+}
+
+#temporizador {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #ae6716;
+}
+
+#info-jogador {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #ae6716;
+  display: flex;
+  flex-direction: row;
+}
+
+#nome-jogador, #pontuacao-jogador {
+  margin-right: 10px; 
+}
+
 .controles {
   position: absolute;
   top: 50px; 
@@ -133,11 +131,12 @@ button:active {
   background-color: rgb(255,0,0);
 }
 
-
 .quadrado {
   width: 50px;
   height: 50px;
   border: 1px solid black;
+  position : relative;
+  left: 35px;
 }
 
 .personalizacao {
@@ -174,34 +173,9 @@ button:active {
   border: none;
 }
 
-.personalizacao input[type="submit"]:hover {
-  background-color: #45a049;
+.personalizacao input[type="submit"]:active {
+  background-color:rgb(255,0,0);
 }
-.inventario {
-  display: flex;
-  position: fixed;
-  bottom: 45%;
-  right: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.inventario li {
-  list-style: none; 
-  width: 100px; 
-  height: 100px; 
-  border: 1px solid black; 
-  margin: 5px; 
-  text-align: center;
-  line-height: 50px; 
-}
-
-
-
-
-
-
 
 .botao {
   background-color: #ae6716;
@@ -213,6 +187,17 @@ button:active {
   bottom: 10%; 
   right: 20px;
 }
+
+.inventario {
+  display: flex;
+  position: fixed;
+  bottom: 45%;
+  right: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .slot {
   width: 100px;
   height: 100px;

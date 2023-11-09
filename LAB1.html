@@ -7,6 +7,18 @@
   <title>JORGE</title>
 </head>
 <body>
+
+    <div id="temporizador"></div>
+
+    <div class="inventario">
+        <div id="slot-1" class="slot"></div>
+        <div id="slot-2" class="slot"></div>
+    </div>
+    
+    <button class="botao" onclick="adicionarMoedaAoInventario()">1 moeda = 100 pontos</button>
+    
+    <div id="estado"></div>
+    
     <div class="personalizacao">
         <h2>Personalização </h2>
         <form id="personalizacaoForm">
@@ -19,27 +31,20 @@
             <input type="submit" value="Aplicar Personalização">
         </form>
     </div>
-   
     
     <div class="placar">
-        <table>
-            <tr>
-                <td>
-                    <div id="info-jogador">
-                        <span id="nome-jogador">JORGE:</span>
-                        <span id="pontuacao-jogador">0</span>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div id="info-jogador">
+            <span id="nome-jogador">JORGE:</span>
+            <span id="pontuacao-jogador"> 0</span>
+        </div>
     </div>
-    <div id="temporizador"></div>
-    <div id="pontuacao-jogador"></div>
+
     <div class="controles">
         <button id="iniciar" onclick="iniciarTemporizador()">Iniciar</button>
         <button id="pausar" onclick="pausarTemporizador()">Pausar</button>
         <button id="reiniciar" onclick="reiniciarTemporizador()">Reiniciar</button>
     </div>
+
     <table class="tabuleiro">
         <tr>
             <td id="celula-1-1"></td>
@@ -65,17 +70,7 @@
             <td id="celula-3-3"></td>
         </tr>
     </table>
-    <div class="inventario">
-        <div id="slot-1" class="slot"></div>
-        <div id="slot-2" class="slot"></div>
-    </div>
-    
-    <button class="botao" onclick="adicionarMoedaAoInventario()">1 moeda = 100 pontos</button>
-    
-    
-    <div id="estado"></div>
-    
-      
+   
     <script src="things.js"></script>
 </body>
 </html>
