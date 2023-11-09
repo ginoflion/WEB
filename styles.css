@@ -177,34 +177,31 @@ button:active {
 .personalizacao input[type="submit"]:hover {
   background-color: #45a049;
 }
-
 .inventario {
   display: flex;
   position: fixed;
   bottom: 45%;
   right: 20px;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
 }
 
-.slot {
-  width: 100px;
-  height: 100px;
-  border: 1px solid #000000;
-  margin: 5px;
-  background-color: #ffffff;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px; /* Tamanho da fonte para o número dentro do slot */
+.inventario li {
+  list-style: none; 
+  width: 100px; 
+  height: 100px; 
+  border: 1px solid black; 
+  margin: 5px; 
+  text-align: center;
+  line-height: 50px; 
 }
 
-.slot span {
-  pointer-events: none; /* Impede que o número dentro do slot receba eventos de mouse */
-}
+
+
+
+
+
 
 .botao {
   background-color: #ae6716;
@@ -216,13 +213,24 @@ button:active {
   bottom: 10%; 
   right: 20px;
 }
+.slot {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  margin: 5px;
+  position: relative;
+}
 
 .moeda {
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   background-color: #ffd700;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #estado{

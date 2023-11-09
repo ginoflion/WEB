@@ -3,7 +3,6 @@ var tempoInicial = 30;
 var tempoAtual = tempoInicial;
 var emPausa = true; 
 
-
 //#region Temporizador
 function atualizarTemporizador() {
     var minutos = Math.floor(tempoAtual / 60);
@@ -36,6 +35,7 @@ function reiniciarTemporizador() {
     pausarTemporizador(); 
     tempoAtual = tempoInicial;
     atualizarTemporizador();
+    limparInventario();
     pontuacao = 0; 
     document.getElementById('pontuacao-jogador').textContent = pontuacao; 
 }
@@ -164,41 +164,44 @@ function verificarColisao() {
 spawnQuadrados();
 setInterval(verificarColisao, 250);
 //#endregion
-var moedaAdicionada = false; 
-var slots = document.querySelectorAll('.slot'); 
+
   
- //#region inventário kinda 
-function adicionarMoeda() {
-    if (pontuacao >= 100 && !moedaAdicionada) {
-      var proximoSlot = Array.from(slots).find(slot => !slot.classList.contains('ocupado'));
-  
-      if (proximoSlot) {
-        var moeda = document.createElement('div');
-        moeda.classList.add('moeda');
-  
-        var slotRect = proximoSlot.getBoundingClientRect();
-        var moedaSize = 50; 
-        var left = slotRect.left + (slotRect.width - moedaSize) / 2;
-        var top = slotRect.top + (slotRect.height - moedaSize) / 2;
-  
-        moeda.style.position = 'absolute';
-        moeda.style.left = left + 'px';
-        moeda.style.top = top + 'px';
-  
-        document.body.appendChild(moeda);
-  
-        proximoSlot.classList.add('ocupado'); 
-        moedaAdicionada = true; 
-  
-       
-        setTimeout(function() {
-          moedaAdicionada = false;
-        }, 1000); 
-        
-        pontuacao -= 100;
-      }
+ //#region inventário  
+ let inventario = [null, null];
+
+ function adicionarMoedaAoInventario() {
+    if (pontuacao >= 100) {
+        // Verifica se a pontuação é maior ou igual a 100
+        let novaMoeda = document.createElement("div");
+        novaMoeda.className = "moeda";
+
+        if (inventario.includes(null)) {
+            let slotVazio = inventario.indexOf(null);
+            inventario[slotVazio] = novaMoeda;
+
+            let slotElement = document.getElementById("slot-" + (slotVazio + 1));
+            slotElement.appendChild(novaMoeda);
+            
+            // Reduz a pontuação em 100 ao comprar uma moeda
+            pontuacao -= 100;
+            document.getElementById('pontuacao-jogador').textContent = pontuacao; // Atualiza a exibição da pontuação no HTML
+        }
+    } else {
+        console.log("Você não tem pontos suficientes para adicionar uma moeda.");
     }
-  }
+}
+
+
+
+
+  function limparInventario() {
+    inventario = [null, null];
+    for (let i = 1; i <= inventario.length; i++) {
+        let slotElement = document.getElementById("slot-" + i);
+        slotElement.innerHTML = ""; 
+    }
+}
+
   //#endregion
 
   let estado = 'Iniciar';
