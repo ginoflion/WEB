@@ -219,4 +219,4 @@ function adicionarMoeda() {
   }
   
   setInterval(AtualizarEstado, 250);
-  //#endregion
+ 
